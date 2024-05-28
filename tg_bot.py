@@ -86,6 +86,7 @@ async def classify_by_file(update: Update, context: ContextTypes.DEFAULT_TYPE):
         res = predict(im)
     except:
         res = 'Invalid Image Format'
+    file.unlink()
     await update.message.reply_text(res)
 
 
